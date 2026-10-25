@@ -1,0 +1,10 @@
+{
+  "title": "DGUT verification code: elementary structure and provisional linear dynamics",
+  "upload_type": "software",
+  "description": "Numerical illustrations accompanying the preprint note on the Dynamic Gaussian Plane Unified Field Hypothesis (DGUT). Scope: elementary statements (sign decomposition, mapping pressure, left-nested recursion bound) and linear-algebra properties of a provisional linear ODE. Not a verification of DGUT itself.",
+  "creators": [{"name": "Sendo, Hazime", "orcid": "0009-0007-3285-0308"}],
+  "license": "Apache-2.0",
+  "access_right": "open",
+  "keywords": ["DGUT", "Lipschitz constant", "verification code"],
+  "version": "1.0.2"
+}
