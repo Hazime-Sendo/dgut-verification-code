@@ -4,6 +4,8 @@ Numerical illustrations accompanying the preprint note
 *Dynamic Gaussian Plane Unified Field Hypothesis (DGUT): A Mathematical Construction of the Two-Layer Structure φ, α …*
 (author: Hazime Sendo, ORCID 0009-0007-3285-0308).
 
+**Archive.** Zenodo, version 1.0.2: [10.5281/zenodo.23633502](https://doi.org/10.5281/zenodo.23633502); all versions (resolves to the latest): [10.5281/zenodo.23633501](https://doi.org/10.5281/zenodo.23633501).
+
 **Important.** The provisional ODE is *not* part of the manuscript `part0` (whose Hypothesis 4.1 states no equation of motion); it is a separate, clearly labelled hypothesis P1 of the note "DGUT 1.0". The main parts of `part0` (chain model, Π_Q, irreversibility hypothesis) have no code-based verification here.
 
 **Scope.** The code checks only (i) the elementary statements of Chapter 0 and (ii) the linear-algebra properties of the *provisional* linear ODE
@@ -34,7 +36,7 @@ python3 src/dgut_ode_check.py  --seed 1
 ```
 
 Exit status is 0 if all checks pass, 1 otherwise. Seeds are fixed (`--seed`), so logs are reproducible with the same library versions.
-Reference environment: see `results/environment.txt` (Python see file at the time of writing).
+The reference run's environment (Python, numpy, scipy versions) is recorded in `results/environment.txt`.
 
 ## Build the note
 
