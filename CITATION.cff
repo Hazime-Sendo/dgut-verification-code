@@ -7,6 +7,8 @@ authors:
     given-names: "Hazime"
     orcid: "https://orcid.org/0009-0007-3285-0308"
 license: Apache-2.0
+doi: 10.5281/zenodo.23633501
+repository-code: "https://github.com/Hazime-Sendo/dgut-verification-code"
 version: "1.0.2"
 abstract: "Numerical illustrations accompanying the preprint note on the Dynamic Gaussian Plane Unified Field Hypothesis (DGUT). They cover only elementary statements (sign decomposition, mapping pressure, recursion bounds) and the linear-algebra properties of a provisional linear ODE."
 keywords:
