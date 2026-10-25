@@ -1,0 +1,12 @@
+[PASS] make_M agrees with Z -> (a-gamma)Z + b conj(Z) 
+[PASS] eigenvalues = -gamma +- sqrt(|b|^2 - a2^2) (real and complex-pair cases) 
+[PASS] Remark 1 example: eigenvalue +1 although gamma>0 (eigenvalues [-3.  1.])
+[PASS] growth iff |b|^2 - a2^2 > gamma^2 (real-root case) 
+[PASS] Remark 2 example: Re(eig) = -0.1 and ||e^M|| = 1.166 > 1 (1.1662)
+      max ||e^(tM)|| = 1.177 at t=1.27; first t with value < 1: 2.39
+[PASS] sampled Lipschitz ratio <= ||e^M|| and close to it (max=1.1662)
+[PASS] iota o f = f o iota  iff  a=0 and b in R 
+[PASS] iota o f = -f o iota  iff  gamma=0 and b in iR  (never for gamma>0) 
+
+Note: linear-algebra properties of the provisional ODE only; not a verification of DGUT, Pi_Q or the phase map.
+ALL PASS

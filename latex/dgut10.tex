@@ -1,0 +1,291 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{fontspec}
+\usepackage[pdfencoding=unicode,psdextra]{hyperref}
+\hypersetup{pdfauthor={Hazime Sendo},pdftitle={DGUT 1.0: elementary structure and provisional dynamics},pdfsubject={Verification note for DGUT},colorlinks=false,hidelinks}
+
+\setmainfont{Noto Serif CJK JP}
+\usepackage[margin=2.5cm]{geometry}
+
+\title{DGUT 1.0: 初等構造と暫定力学}
+\author{仙道一 / Hazime Sendo}
+\date{}
+
+\begin{document}
+\sloppy
+\maketitle
+
+\section*{第0章：初等構造（part0\_v10 準拠）}
+
+\subsection*{0.1 ガウス平面と共役作用子}
+
+本稿ではガウス平面 $\mathbb{C}$ を用い，
+
+
+\[
+Z = \phi + i\pi
+\]
+
+
+と書く。共役作用子 $\iota$ を
+
+
+\[
+\iota(Z) = \bar Z
+\]
+
+
+と定義する。これは involution であり，
+
+
+\[
+\iota\circ\iota = \mathrm{id}
+\]
+
+
+が成り立つ。
+
+\subsection*{0.2 変化率 $A$ と符号分解（Prop.~sign）}
+
+原稿の定義に従い，
+
+
+\[
+A(Z) = \langle \nabla F(\phi),\, \pi \rangle
+\]
+
+
+とする。ここから
+
+
+\[
+A(\iota Z) = -A(Z)
+\]
+
+
+が導かれる。
+
+符号領域を
+
+
+\[
+\Sigma_+ = \{Z : A(Z) > 0\},\qquad
+\Sigma_- = \{Z : A(Z) < 0\}
+\]
+
+
+と定義すると，$\iota$ により
+
+
+\[
+\iota(\Sigma_+) = \Sigma_-,\qquad
+\iota(\Sigma_-) = \Sigma_+
+\]
+
+
+が成り立つ。
+
+\subsection*{0.3 写像圧力 $\Lambda$（\textbf{最小 Lipschitz 定数}）}
+
+写像 $f:\mathbb{C}\to\mathbb{C}$ に対し，
+原稿の定義どおり最小 Lipschitz 定数を
+
+
+\[
+\Lambda(f)
+= \sup_{x\neq y}\frac{|f(x)-f(y)|}{|x-y|}
+\]
+
+
+とする。
+
+\paragraph{Remark.}
+原点からの利得
+
+
+\[
+\sup_{Z\neq 0}\frac{|f(Z)|}{|Z|}
+\]
+
+
+とは一般に異なる。
+たとえば $f(Z)=Z+1$ では $\Lambda(f)=1$ だが，
+原点利得は $f(0)\neq 0$ のため無限大となる。
+
+\subsection*{0.4 点ごとの上側 Lipschitz 定数 $\lambda_f$}
+
+原稿の定義に従い，
+
+
+\[
+\lambda_f(x)
+= \limsup_{y\to x}\frac{|f(y)-f(x)|}{|y-x|}
+\]
+
+
+とする。微分可能性は仮定しない。
+
+一般には
+
+
+\[
+\sup_x \lambda_f(x) \le \Lambda(f)
+\]
+
+
+が成り立つが，
+$\mathbb{C}$ は length space であるため，
+原稿の命題により
+
+
+\[
+\sup_x \lambda_f(x) = \Lambda(f)
+\]
+
+
+となる。
+
+\paragraph{Remark.}
+$\mathbb{R}\setminus\{0\}$ は length space でないため，
+$\sup_x \lambda_f(x) = \Lambda(f)$ が成り立つとは限らず，
+実際に崩れる例が得られる。
+この場合，$f=\mathrm{sign}$ では $\lambda_f(x)=0$ であっても，
+$0$ をまたぐと $\Lambda(f)=\infty$ となる。
+
+\subsection*{0.5 左入れ子再帰（dyad）と上界}
+
+原稿の定義どおり，
+2 引数写像（dyad）$f:\mathbb{C}^2\to\mathbb{C}$ の
+左入れ子再帰を
+
+
+\[
+f^{[1]}(x_1,x_2)=f(x_1,x_2),\qquad
+f^{[n]}(x_1,\dots,x_{n+1})
+= f\bigl(f^{[n-1]}(x_1,\dots,x_n),\, x_{n+1}\bigr)
+\]
+
+
+と定義する。
+
+$\mathbb{C}^{n+1}$ には和計量
+
+
+\[
+d(x,y) = \sum_{i=1}^{n+1} |x_i - y_i|
+\]
+
+
+を入れる。このとき原稿の命題として，
+
+
+\[
+\Lambda\bigl(f^{[n]}\bigr)
+\le
+\Lambda(f)\,\max(1,\Lambda(f))^{n-1}
+\]
+
+
+が成り立つ。
+
+\paragraph{Remark.}
+1 変数写像の反復 $f^n$ とは別の概念である。
+反復では $\Lambda(f^n)\le \Lambda(f)^n$ が成り立つ。
+
+\section*{Provisional Hypothesis P1（\textbf{暫定}）：最小線形力学}
+
+part0 の Hypothesis 4.1 は運動方程式を述べない。
+以下は part0 には含まれない新しい仮説（暫定）であり，part0 の Hypothesis 4.1 とは別のものとして P1 と呼ぶ。
+
+\[
+\dot Z = aZ + b\bar Z - \gamma Z.
+\]
+
+ここで，
+\begin{itemize}
+\item $a\in i\mathbb{R}$：保存的成分（\textbf{回転のみ}）
+\item $b\in\mathbb{C}$：共役作用（鏡像）
+\item $\gamma>0$：減衰率（実部を担う）
+\end{itemize}
+
+\paragraph{Remark 1（散逸にならない反例）.}
+$a=a_2 i$ と書くと，固有値は
+\[
+(-\gamma)\pm\sqrt{|b|^2-a_2^2}
+\]
+である。ただし，これは $|b|\ge|a_2|$ のときの実根であり，
+$|b|<|a_2|$ のときは複素共役の対となり，
+実部は常に $-\gamma$ となる。
+いずれにせよ，$\gamma>0$ でも成長する場合がある。
+例：$a=0$, $b=2$, $\gamma=1$ では固有値 $+1$。
+
+\paragraph{Remark 2（非正規性）.}
+$M$ を
+\[
+M: Z \mapsto (a-\gamma)Z + b\bar Z
+\]
+とする $\mathbb{R}$-線形写像とする。
+このときフローを
+\[
+\Phi_t = \mathrm{e}^{tM}
+\]
+と書き，$t=1$ の値を $\mathrm{e}^M$ と書く。
+ここでのノルム $\|\mathrm{e}^{tM}\|$ は，
+$\mathbb{C}\cong\mathbb{R}^2$ のユークリッドノルムに対する
+作用素ノルム（最大特異値）である\cite{HJ}。
+
+固有値の実部が負でも，
+\[
+\|\mathrm{e}^{M}\|>1
+\]
+となる場合がある。
+例：$a=i$, $b=0.3$, $\gamma=0.1$ では
+実部 $-0.1$ だが $\|\mathrm{e}^M\|=1.166$。
+
+線形フローであるため，
+\[
+\Lambda(\Phi_t) = \|\mathrm{e}^{tM}\|
+\]
+が成り立つ。これは原稿の Prop.~6.1(c)
+「$\Lambda_D(\varphi_t)<1$ なら $\Pi_Q$ は定数」
+に接続するが（ここでの $\Phi_t$ を Prop.~6.1 の $\varphi_t$ とみなすことは仮定である），
+$\Pi_Q$ 自体は未定義のままである。
+
+\paragraph{Remark 3（$\iota$ 対称性と時間反転）.}
+$\iota\circ f = f\circ\iota$ は，$\bar a=a$ かつ $\bar b=b$ と同値である。
+$a\in i\mathbb{R}$ の下では $a=0$ かつ $b\in\mathbb{R}$ となり，回転は残らない。
+
+時間反転型の対称性
+\[
+\iota\circ f = -f\circ\iota
+\]
+は，$a-\gamma$ が純虚数で $b$ も純虚数のときに限って成り立つ。
+$a\in i\mathbb{R}$ の下では，これは $\gamma=0$ かつ $b\in i\mathbb{R}$ と同値である。
+したがって $\gamma>0$ では，許される全てのパラメータで
+この時間反転対称性は成り立たない。
+
+\paragraph{Remark 4（符号分解との整合）.}
+本 ODE は $F$ と $A=\langle\nabla F,\pi\rangle$ を含まないため，
+符号分解との整合は未確立である。
+
+\section*{初等構造の数値例}
+
+本節の数値例は，同梱のコード \texttt{src/dgut\_elementary.py}
+（0.1--0.5 の初等命題の例示）および
+\texttt{src/dgut\_ode\_check.py}
+（Provisional Hypothesis P1 の暫定 ODE の線形代数的性質：Remark 1--3 と
+$\Lambda(\Phi_t)=\|\mathrm{e}^{tM}\|$）による。
+これらは初等命題と暫定 ODE の性質の数値例であり，
+「確認された」ほどの強さは持たない。
+$\Pi_Q$，状態割当 $\chi$，相の対応は原稿のプレースホルダーであり，
+検証の対象外である。
+
+
+\begin{thebibliography}{9}
+\bibitem{HJ}
+R.~A.~Horn, C.~R.~Johnson,
+\textit{Matrix Analysis},
+Cambridge University Press (1985).
+\end{thebibliography}
+
+\end{document}

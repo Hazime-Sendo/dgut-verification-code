@@ -1,0 +1,5 @@
+{
+  "_comment": "Parameter sets quoted in the Remarks of latex/dgut10.tex. a is given as [Re, Im]; b likewise. a must be purely imaginary (Provisional Hypothesis P1).",
+  "remark1_growth_despite_gamma": {"a": [0.0, 0.0], "b": [2.0, 0.0], "gamma": 1.0, "expected_eigenvalues": [1.0, -3.0]},
+  "remark2_nonnormal_transient":  {"a": [0.0, 1.0], "b": [0.3, 0.0], "gamma": 0.1, "expected_real_part": -0.1, "expected_norm_t1": 1.166, "norm_tolerance": 0.0005}
+}

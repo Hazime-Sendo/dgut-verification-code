@@ -1,0 +1,46 @@
+[PASS] iota o iota = id 
+[PASS] A(iota Z) = -A(Z) 
+[PASS] iota swaps Sigma- and Sigma+ (|S-|=474, |S+|=526, |S0|=0)
+
+[2] mapping pressure estimates (sample max; lower estimate of the true value)
+[PASS] conj (Lambda=1) estimate=1.0000 class =1 (non-expanding)
+[PASS] rotation exp(0.7i) z (Lambda=1) estimate=1.0000 class =1 (non-expanding)
+[PASS] 0.5 z (Lambda=0.5) estimate=0.5000 class <1 (contraction)
+[PASS] 0.9 exp(0.7i) z (Lambda=0.9) estimate=0.9000 class <1 (contraction)
+[PASS] 2 z (Lambda=2) estimate=2.0000 class >1 (expanding)
+[PASS] z + 0.3 sin(Re z) (Lambda=1.3) estimate=1.2986 class >1 (expanding)
+
+[3] left-nested recursion: Lambda(f^[n]) <= Lambda(f)*max(1,Lambda(f))^(n-1)
+  (a) coordinate-wise ratio = analytic coefficient (the map is linear, so this is a re-check of the exact value);
+  (b) random perturbation of all coordinates: sampled ratio must not exceed the bound.
+[PASS] c1=0.5, c2=0.3, n=1 coordinate ratio=0.5000, random-direction max=0.4975 <= bound=0.5000
+[PASS] c1=0.5, c2=0.3, n=3 coordinate ratio=0.3000, random-direction max=0.2639 <= bound=0.5000
+[PASS] c1=0.5, c2=0.3, n=6 coordinate ratio=0.3000, random-direction max=0.1591 <= bound=0.5000
+[PASS] c1=0.5, c2=0.3, n=10 coordinate ratio=0.3000, random-direction max=0.1022 <= bound=0.5000
+[PASS] c1=1.0, c2=0.2, n=1 coordinate ratio=1.0000, random-direction max=0.9956 <= bound=1.0000
+[PASS] c1=1.0, c2=0.2, n=3 coordinate ratio=1.0000, random-direction max=0.7935 <= bound=1.0000
+[PASS] c1=1.0, c2=0.2, n=6 coordinate ratio=1.0000, random-direction max=0.4990 <= bound=1.0000
+[PASS] c1=1.0, c2=0.2, n=10 coordinate ratio=1.0000, random-direction max=0.3588 <= bound=1.0000
+[PASS] c1=1.2, c2=0.5, n=1 coordinate ratio=1.2000, random-direction max=1.1969 <= bound=1.2000
+[PASS] c1=1.2, c2=0.5, n=3 coordinate ratio=1.7280, random-direction max=1.3931 <= bound=1.7280
+[PASS] c1=1.2, c2=0.5, n=6 coordinate ratio=2.9860, random-direction max=1.6839 <= bound=2.9860
+[PASS] c1=1.2, c2=0.5, n=10 coordinate ratio=6.1917, random-direction max=2.3556 <= bound=6.1917
+[PASS] c1=0.9, c2=1.6, n=1 coordinate ratio=1.6000, random-direction max=1.5951 <= bound=1.6000
+[PASS] c1=0.9, c2=1.6, n=3 coordinate ratio=1.6000, random-direction max=1.5095 <= bound=4.0960
+[PASS] c1=0.9, c2=1.6, n=6 coordinate ratio=1.6000, random-direction max=1.2211 <= bound=16.7772
+[PASS] c1=0.9, c2=1.6, n=10 coordinate ratio=1.6000, random-direction max=0.9636 <= bound=109.9512
+
+[4] counterexample: X=R\{0}, f=sign.  pointwise lambda_f=0, global Lambda=inf
+[PASS] lambda_f(0.5)=0 while ratio across 0 diverges (local ratio=0.0, ratio across 0=1.00e+06)
+
+[5] example: phi'' = -phi - gamma*phi', pi=phi', F=phi^2/2, A=phi*pi=dF/dt
+  gamma=0.0: S-:0.51 S+:0.49  sign changes of A: 25, E: 0.500->0.500
+[PASS] gamma=0: E approximately conserved 
+  gamma=0.2: S-:0.55 S+:0.45  sign changes of A: 25, E: 0.500->0.000
+[PASS] gamma=0.2: E non-increasing at every step (max step change -2.56e-10)
+  gamma=5.0: S-:1.00 S+:0.00  sign changes of A: 0, E: 0.500->0.000
+[PASS] gamma=5.0: E non-increasing at every step (max step change -1.34e-11)
+[PASS] overdamped (gamma=5): A never positive, no sign change (consistent with the Remark on overdamped motion; a numerical example only)
+
+Note: numerical illustrations of elementary statements; not a verification of DGUT claims, Pi_Q or the phase map.
+ALL PASS
